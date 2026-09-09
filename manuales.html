@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manuales de Proceso · Canal Moderno · Alimentos Barcelona</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0D2A6D;--blue:#21299D;--sky:#4699EF;--red:#E00206;--guinda:#A60A1B;--tint:#EEF3FB;
+--ink:#27314F;--gray:#6B7280;--line:#C9D5EA;--yel:#FFF2CC;--ok:#1E8E3E;--dor:#B97E0B}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Calibri,'Segoe UI',Arial,sans-serif;background:#EEF1F7;color:var(--ink);font-size:14px}
+.top{background:linear-gradient(135deg,#0D2A6D,#071B47);color:#fff;padding:12px 22px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.top img{height:36px}
+.top .t{font-family:'Bebas Neue',Impact,sans-serif;font-size:23px;letter-spacing:1px}
+.top .sp{flex:1}
+.top a{color:#8FB4F0;font-size:12px;font-weight:700;text-decoration:none}
+.wrap{max-width:1080px;margin:0 auto;padding:20px}
+.intro{background:#fff;border:1px solid var(--line);border-left:5px solid var(--red);border-radius:0 12px 12px 0;padding:16px 20px;margin-bottom:18px;font-size:13.5px;line-height:1.7}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.tab{background:#fff;border:1.5px solid var(--line);border-radius:10px;padding:10px 18px;font-weight:800;font-size:13px;color:var(--gray);cursor:pointer}
+.tab.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.man{display:none;background:#fff;border:1px solid var(--line);border-radius:14px;padding:26px 30px;margin-bottom:24px}
+.man.on{display:block}
+h1.mt{font-family:'Bebas Neue',Impact,sans-serif;font-size:32px;letter-spacing:1px;color:var(--navy);font-weight:400;margin-bottom:2px}
+.sub{font-size:12px;color:var(--gray);margin-bottom:16px}
+.meta{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}
+.meta span{background:var(--tint);border:1px solid var(--line);border-radius:8px;padding:5px 12px;font-size:11.5px;font-weight:700}
+h2.sx{font-size:13px;font-weight:800;letter-spacing:2px;color:var(--red);margin:24px 0 10px;text-transform:uppercase}
+.paso{display:flex;gap:14px;margin-bottom:12px;align-items:flex-start}
+.paso .n{flex:0 0 30px;height:30px;background:var(--navy);color:#fff;border-radius:50%;font-family:'Bebas Neue',Impact,sans-serif;font-size:16px;display:flex;align-items:center;justify-content:center}
+.paso .tx{padding-top:4px;line-height:1.65}
+.paso .tx b{color:var(--navy)}
+.regla{background:var(--yel);border:1px solid #E8D48A;border-radius:10px;padding:12px 16px;margin:8px 0;font-size:13px;line-height:1.6}
+.regla b{color:var(--guinda)}
+.err{background:#FBE7E8;border-left:4px solid var(--guinda);border-radius:0 8px 8px 0;padding:10px 14px;margin-bottom:8px;font-size:13px;line-height:1.6}
+.tip{background:#E4F3E7;border-left:4px solid var(--ok);border-radius:0 8px 8px 0;padding:10px 14px;margin-bottom:8px;font-size:13px;line-height:1.6}
+table{border-collapse:collapse;width:100%;font-size:12.5px;margin:10px 0}
+th{background:var(--navy);color:#fff;padding:8px 10px;font-size:11px;text-align:left;border:1px solid var(--navy)}
+td{padding:7px 10px;border:1px solid #E3E9F4;vertical-align:top;line-height:1.5}
+tr:nth-child(even) td{background:#F7FAFE}
+code{background:var(--tint);border:1px solid var(--line);border-radius:5px;padding:2px 7px;font-family:Consolas,monospace;font-size:12px;color:var(--navy)}
+.foot{text-align:center;font-size:11px;color:var(--gray);padding:20px 0 30px}
+@media print{.tabs,.top{display:none}.man{display:block!important;page-break-after:always}}
+</style>
+</head>
+<body>
+<div class="top">
+  <img src="logo_blanco.png" alt="AB">
+  <div class="t">MANUALES DE PROCESO · CANAL MODERNO</div>
+  <div class="sp"></div>
+  <a href="inicio.html">☀ Briefing</a>
+  <a href="index.html">📗 Fill Rate</a>
+  <a href="analisis.html">📊 Análisis</a>
+</div>
+<div class="wrap">
+<div class="intro"><b>Para qué existe este documento:</b> que cualquier persona del equipo pueda ejecutar los procesos del canal moderno exactamente igual, esté o no esté el gerente. Si un paso de este manual y la costumbre se contradicen, <b>manda el manual</b>. Si el proceso cambia, se actualiza aquí primero.</div>
+
+<div class="tabs">
+  <div class="tab on" onclick="ir(0)">01 · PEDIDOS DE PRODUCCIÓN</div>
+  <div class="tab" onclick="ir(1)">02 · ACTUALIZACIÓN DEL SISTEMA</div>
+  <div class="tab" onclick="ir(2)">03 · CONTROL DE VIDA ÚTIL</div>
+  <div class="tab" onclick="ir(3)">04 · REPORTE Y REUNIÓN SEMANAL</div>
+</div>
+
+<!-- ==================== MANUAL 1 ==================== -->
+<div class="man on">
+<h1 class="mt">MANUAL 01 · PEDIDOS DE PRODUCCIÓN</h1>
+<div class="sub">Pedido de regulares (lunes) y frescos (viernes) · Versión 1.0 · Septiembre 2026</div>
+<div class="meta"><span>Responsable: Gerente Canal Moderno</span><span>Backup: ______________</span><span>Frecuencia: lunes y viernes</span><span>Herramienta: app Fill Rate (index.html)</span></div>
+
+<h2 class="sx">Las reglas del ciclo (no negociables)</h2>
+<div class="regla"><b>Pedido 1 (P1):</b> entrega jueves — debe estar <b>COMPLETO el jueves AM</b>. Cubre las ventas de <b>viernes, sábado y lunes</b>.</div>
+<div class="regla"><b>Pedido 2 (P2):</b> entrega lunes — debe estar <b>COMPLETO el lunes AM</b>. Cubre las ventas de <b>martes, miércoles y jueves</b>.</div>
+<div class="regla"><b>Regla del lunes:</b> el inventario del lunes debe cubrir la venta de <b>martes + miércoles + jueves</b>. Si no cubre, se gestiona de inmediato.</div>
+<div class="regla"><b>Frescos:</b> el pedido se hace el <b>viernes</b>. El inventario del viernes AM debe cubrir de <b>sábado a jueves</b>.</div>
+<div class="regla"><b>Fórmula oficial de proyección:</b> 50% × última semana completa + 25% × promedio 4 semanas + 25% × promedio 8 semanas. El reparto por día sale del <b>calendario histórico de entregas de cada cliente</b> (la app lo calcula).</div>
+<div class="regla"><b>Medición de traslados 1009→1010:</b> P1 = suma de mar+mié+jue · P2 = vie+sáb+dom+lun. Así se mide cuánto inventario pasó producción.</div>
+
+<h2 class="sx">Paso a paso — pedido de REGULARES (lunes)</h2>
+<div class="paso"><div class="n">1</div><div class="tx"><b>Actualiza el sistema</b> (ver Manual 02): venta y existencias del día, correr generador, Ctrl+F5.</div></div>
+<div class="paso"><div class="n">2</div><div class="tx">Abre la app → pestaña <b>INVENTARIO</b> → chip <b>REGULARES</b>. Revisa la <b>regla del lunes</b> en cada SKU rojo: si el inventario no cubre mar–jue, ese SKU es prioridad.</div></div>
+<div class="paso"><div class="n">3</div><div class="tx">Revisa el monitor <b>"SEMANA EN CURSO"</b>: los SKUs <b>VA CORTO</b> (&lt;85%) se recortan; los <b>VA ARRIBA</b> (&gt;115%) pueden necesitar más.</div></div>
+<div class="paso"><div class="n">4</div><div class="tx">Para cada SKU dudoso: clic en la fila → <b>simulador día a día</b>. Edita las llegadas (▲) hasta que ningún día quede en rojo y sin generar sobre-stock (&gt;1.6 semanas).</div></div>
+<div class="paso"><div class="n">5</div><div class="tx">Pregunta al 🤖 asistente <b>"¿Cuánto pido?"</b> — te da P1/P2 sanos. Compara contra tu criterio comercial (promociones, feriados, quincena).</div></div>
+<div class="paso"><div class="n">6</div><div class="tx"><b>Valida magnitudes antes de enviar:</b> el total del pedido debe estar en el rango histórico (15–30 mil unidades regulares). Un total de 100 mil+ = error de captura, revisar.</div></div>
+<div class="paso"><div class="n">7</div><div class="tx">Llena la programación oficial (archivo <b>"XX. PROGRAMACION SEMANA XX PRODUCTOS REGULAR.xlsx"</b>), guárdala en su carpeta y envía el correo a producción con <b>fechas y cantidades por entrega</b> (P1 jueves / P2 lunes).</div></div>
+
+<h2 class="sx">Paso a paso — pedido de FRESCOS (viernes)</h2>
+<div class="paso"><div class="n">1</div><div class="tx">Actualiza el sistema con la venta del jueves y las existencias del viernes AM.</div></div>
+<div class="paso"><div class="n">2</div><div class="tx">Pestaña INVENTARIO → chip <b>FRESCOS</b>. El inventario de hoy debe cubrir <b>sáb → jue</b>. Los rojos son el pedido.</div></div>
+<div class="paso"><div class="n">3</div><div class="tx">Revisa el filtro <b>⏳ SE PASAN DE 20 DÍAS</b> antes de pedir: no pidas encima de producto atrapado (ver Manual 03).</div></div>
+<div class="paso"><div class="n">4</div><div class="tx">Simula, valida magnitudes, llena la programación FRESCOS y envía con fechas y cantidades.</div></div>
+
+<h2 class="sx">Errores que ya nos pasaron (no repetir)</h2>
+<div class="err">❌ <b>Duplicar el pedido extra:</b> un pedido extra es SOLO para la semana en curso. Nunca se vuelve a sumar en el pedido normal de la semana siguiente.</div>
+<div class="err">❌ <b>Pedido ×10:</b> en S36 un archivo corrupto multiplicó el pedido (332 mil un). Siempre validar el total contra el rango histórico antes de enviar.</div>
+<div class="err">❌ <b>Pedir sin actualizar datos:</b> decidir con la venta de hace 3 días infla o corta el pedido. Primero actualizar, luego pedir.</div>
+<div class="tip">✔ La base de todo cálculo es <b>LO SOLICITADO</b> por el cliente (no lo despachado): esa es la demanda real.</div>
+</div>
+
+<!-- ==================== MANUAL 2 ==================== -->
+<div class="man">
+<h1 class="mt">MANUAL 02 · ACTUALIZACIÓN DEL SISTEMA BCIP</h1>
+<div class="sub">Cómo alimentar y regenerar la app de Fill Rate · Versión 1.0 · Septiembre 2026</div>
+<div class="meta"><span>Responsable: Gerente Canal Moderno</span><span>Backup: ______________</span><span>Frecuencia: diario (10 min)</span><span>Requiere: PC con Python</span></div>
+
+<h2 class="sx">Los 3 archivos que alimentan el sistema</h2>
+<table><tr><th>Archivo</th><th>De dónde sale</th><th>Dónde se guarda</th><th>Cuándo</th></tr>
+<tr><td><b>FILL RATE SAP 2026..xlsx</b></td><td>Export de SAP: pedidos, entregas y fechas (hoja DATA)</td><td>Carpeta <code>CLAUDE SAP\FILL RATE</code> — mismo nombre, reemplazar</td><td>Diario</td></tr>
+<tr><td><b>Existencias_SM-INVENTARIO.xlsx</b></td><td>Export de SAP: existencias bodega 1010 <b>con columna ExpDate</b> (fechas de vencimiento por lote)</td><td>Carpeta <code>CLAUDE SAP\FILL RATE</code></td><td>Diario o al menos lun/mié/vie</td></tr>
+<tr><td><b>XX. PROGRAMACION SEMANA XX ... .xlsx</b></td><td>El pedido que armaste (regular o frescos)</td><td>Sus carpetas de PLANIFICACION DE PRODUCCION</td><td>Al hacer cada pedido</td></tr></table>
+<div class="regla"><b>Regla de oro:</b> se guarda <b>directo en la carpeta</b> con el nombre exacto (reemplazando el anterior). El sistema toma siempre el archivo guardado más reciente y detecta solo hasta qué día llegó la venta.</div>
+
+<h2 class="sx">Paso a paso</h2>
+<div class="paso"><div class="n">1</div><div class="tx">Exporta de SAP los archivos del cuadro y <b>guárdalos en su carpeta</b> (sobrescribir el existente).</div></div>
+<div class="paso"><div class="n">2</div><div class="tx">Corre el generador: doble clic a <code>generar_fillrate_html.py</code> o en consola:<br><code>python "C:\Users\...\CLAUDE SAP\FILL RATE\generar_fillrate_html.py"</code></div></div>
+<div class="paso"><div class="n">3</div><div class="tx">Verifica en el mensaje final que diga <b>"guardado [hoy]"</b> y que generó index, inicio y analisis. Si dice una fecha vieja, el archivo no se guardó bien.</div></div>
+<div class="paso"><div class="n">4</div><div class="tx">Abre la app y presiona <b>Ctrl+F5</b> (recarga forzada). Si ves datos viejos, es caché del navegador — Ctrl+F5 otra vez.</div></div>
+<div class="paso"><div class="n">5</div><div class="tx">Para actualizar la versión web: corre <code>publicar_fillrate.py</code>. Tarda 1–2 min en reflejarse en línea.</div></div>
+
+<h2 class="sx">Si algo sale mal</h2>
+<div class="err">❌ <b>"La página no carga / se ve vieja":</b> 90% de las veces es caché → Ctrl+F5. Si es la web, falta correr el publicador.</div>
+<div class="err">❌ <b>Números absurdos (x10, semanas en cero):</b> el export vino incompleto o corrupto. Volver a exportar de SAP y regenerar. Nunca decidir sobre números que "se ven raros".</div>
+<div class="err">❌ <b>Inventario sin fechas:</b> el export salió sin columna ExpDate → la vida útil no se puede vigilar. Re-exportar con fechas.</div>
+<div class="tip">✔ La app dice arriba <b>"Venta cargada hasta [día]"</b> — verifícalo siempre antes de tomar decisiones. La cobertura se calcula desde el día siguiente.</div>
+</div>
+
+<!-- ==================== MANUAL 3 ==================== -->
+<div class="man">
+<h1 class="mt">MANUAL 03 · CONTROL DE VIDA ÚTIL (REGLA DE LOS 20 DÍAS)</h1>
+<div class="sub">Prevención y manejo de producto próximo a vencer · Versión 1.0 · Septiembre 2026</div>
+<div class="meta"><span>Responsable: Gerente Canal Moderno</span><span>Backup: ______________</span><span>Frecuencia: lun / mié / vie</span></div>
+
+<h2 class="sx">La regla</h2>
+<div class="regla">Un producto con <b>20 días o menos de vida</b> ya NO se puede despachar a las cadenas. A partir de esa línea, esas unidades <b>no cuentan como inventario vendible</b>: la app las descuenta sola y las marca ⏳.</div>
+
+<h2 class="sx">Rutina de control</h2>
+<div class="paso"><div class="n">1</div><div class="tx">Pestaña INVENTARIO → filtro <b>⏳ SE PASAN DE 20 DÍAS</b>. Cada fila muestra los lotes con su fecha ("X un vence dd/mm") y cuántas unidades quedarán fuera.</div></div>
+<div class="paso"><div class="n">2</div><div class="tx">Abre el SKU: el simulador marca el <b>día exacto</b> en que cada lote cruza la línea ("⚠ X un quedan FUERA"). Ese día es tu fecha límite de acción.</div></div>
+<div class="paso"><div class="n">3</div><div class="tx">Decide el plan <b>antes</b> de la fecha límite, en este orden:</div></div>
+<table><tr><th>Opción</th><th>Cuándo usarla</th><th>Cómo</th></tr>
+<tr><td><b>1. Empuje / promoción</b></td><td>Faltan 5+ días para la línea y el producto rota</td><td>Impulso en tiendas de mayor rotación, oferta con el comprador</td></tr>
+<tr><td><b>2. Traslado de canal</b></td><td>La cadena ya no lo va a absorber</td><td>Mover a canal con menor exigencia de vida (Gran Gallo, institucional)</td></tr>
+<tr><td><b>3. Extensión de vida</b></td><td>Volumen grande que no saldrá por 1 ni 2</td><td>Solicitar evaluación a calidad ANTES de que cruce la línea</td></tr></table>
+<div class="paso"><div class="n">4</div><div class="tx">Registra qué se decidió por SKU (correo o nota) — en la reunión del jueves se reporta la merma evitada.</div></div>
+
+<h2 class="sx">Prevención (más barato que curar)</h2>
+<div class="tip">✔ <b>SEMANAS STOCK</b> sano: 1.0 – 1.6. Arriba de 1.6 no se mete pedido; arriba de 2.0 se recorta el siguiente.</div>
+<div class="tip">✔ El asistente responde <b>"¿Me pasé con este producto?"</b> con el dato exacto antes de cada pedido.</div>
+<div class="err">❌ Nunca pedir "por si acaso" sobre un SKU que ya tiene lotes cerca de la línea: el pedido nuevo se vende primero (FEFO se rompe en piso) y el lote viejo muere.</div>
+</div>
+
+<!-- ==================== MANUAL 4 ==================== -->
+<div class="man">
+<h1 class="mt">MANUAL 04 · REPORTE Y REUNIÓN SEMANAL</h1>
+<div class="sub">Reunión de resultados: jueves 9:00–10:30 · Versión 1.0 · Septiembre 2026</div>
+<div class="meta"><span>Responsable: Gerente Canal Moderno</span><span>Backup: ______________</span><span>Entregable: presentación + acuerdos</span></div>
+
+<h2 class="sx">Qué se presenta (métricas oficiales)</h2>
+<table><tr><th>Métrica</th><th>Qué mide</th><th>Meta</th></tr>
+<tr><td><b>Fill rate semanal</b></td><td>% despachado vs solicitado de la semana cerrada</td><td>≥ 95%</td></tr>
+<tr><td><b>Proyección acertada</b></td><td>% de la venta real vs lo proyectado por cliente</td><td>85% – 110% = en línea</td></tr>
+<tr><td><b>Veredictos por cliente</b></td><td>PROYECTÉ CORTO / EN LÍNEA / DE MÁS, con razones</td><td>Razón documentada en el 100%</td></tr>
+<tr><td><b>Vida útil</b></td><td>Unidades en riesgo y plan por SKU</td><td>0 merma sin plan</td></tr>
+<tr><td><b>Cumplimiento producción</b></td><td>P1 completo jueves AM / P2 completo lunes AM</td><td>100% en fecha</td></tr></table>
+
+<h2 class="sx">Cómo se construye (sin carreras)</h2>
+<div class="paso"><div class="n">1</div><div class="tx"><b>Lunes:</b> con la semana cerrada, abrir <b>inicio.html → "MI SEMANA PASADA"</b> y analisis.html → Reporte. Armar el borrador de la presentación con esos números.</div></div>
+<div class="paso"><div class="n">2</div><div class="tx"><b>Lunes–miércoles:</b> llenar las <b>RAZONES</b> de cada cliente corto o pasado (se guardan en la app). Sin razón no hay aprendizaje.</div></div>
+<div class="paso"><div class="n">3</div><div class="tx"><b>Miércoles PM:</b> actualizar números finales y cerrar la presentación. El jueves solo se repasa.</div></div>
+<div class="paso"><div class="n">4</div><div class="tx"><b>Jueves 8:30:</b> repaso de 15 min con datos del día. <b>9:00–10:30:</b> reunión. Cerrar SIEMPRE con acuerdos: qué, quién, cuándo.</div></div>
+<div class="paso"><div class="n">5</div><div class="tx"><b>Jueves 11:00:</b> enviar acuerdos por correo a los involucrados el mismo día.</div></div>
+
+<h2 class="sx">Estructura de la reunión (90 min)</h2>
+<table><tr><th>Bloque</th><th>Tiempo</th><th>Contenido</th></tr>
+<tr><td>Resultados</td><td>20 min</td><td>Fill rate, venta vs proyección, semáforos</td></tr>
+<tr><td>Desviaciones</td><td>25 min</td><td>Clientes/SKUs fuera de rango y sus razones</td></tr>
+<tr><td>Vida útil e inventario</td><td>15 min</td><td>Riesgos 20 días, sobre-stock, planes</td></tr>
+<tr><td>Producción</td><td>15 min</td><td>Cumplimiento P1/P2, pendientes de planta</td></tr>
+<tr><td>Acuerdos</td><td>15 min</td><td>Compromisos con responsable y fecha</td></tr></table>
+<div class="tip">✔ Regla de la reunión: los números salen del sistema, no de Excel personales. Una sola fuente de verdad evita medias horas de "a mí me da otro número".</div>
+</div>
+
+<div class="foot">Sistema BCIP · Alimentos Barcelona · Los manuales se actualizan aquí primero — versión impresa solo como respaldo</div>
+</div>
+<script>
+function ir(i){document.querySelectorAll('.man').forEach((m,j)=>m.classList.toggle('on',j===i));
+document.querySelectorAll('.tab').forEach((t,j)=>t.classList.toggle('on',j===i));window.scrollTo(0,0);}
+</script>
+
+<div id="fgate" style="position:fixed;inset:0;z-index:99999;background:linear-gradient(135deg,#0D2A6D,#071B47);display:flex;align-items:center;justify-content:center;font-family:Calibri,'Segoe UI',sans-serif">
+  <div style="background:#fff;border-radius:16px;padding:34px 36px;width:340px;box-shadow:0 24px 70px rgba(0,0,0,.4)">
+    <div style="font-family:'Bebas Neue',Impact,sans-serif;font-size:26px;letter-spacing:1px;color:#0D2A6D;margin-bottom:4px">FILL RATE · CANAL MODERNO</div>
+    <div style="font-size:12px;color:#6B7280;margin-bottom:18px">Alimentos Barcelona · acceso restringido</div>
+    <input id="fgu" type="email" placeholder="Correo" style="width:100%;padding:11px 12px;border:1.5px solid #C9D5EA;border-radius:8px;margin-bottom:10px;font-family:inherit">
+    <input id="fgp" type="password" placeholder="Contraseña" style="width:100%;padding:11px 12px;border:1.5px solid #C9D5EA;border-radius:8px;margin-bottom:14px;font-family:inherit">
+    <button id="fgb" style="width:100%;background:#E00206;color:#fff;border:none;border-radius:8px;padding:12px;font-weight:800;font-size:14px;cursor:pointer;font-family:inherit">ENTRAR</button>
+    <div id="fge" style="font-size:12px;color:#A60A1B;margin-top:10px;min-height:16px"></div>
+  </div>
+</div>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, setPersistence, browserLocalPersistence } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+const app=initializeApp({apiKey:"AIzaSyByCjEixADCPD2bNm_DY7KBOzKLif2Aspc",authDomain:"dashboard-cm-sm.firebaseapp.com",
+  projectId:"dashboard-cm-sm",storageBucket:"dashboard-cm-sm.firebasestorage.app",
+  messagingSenderId:"610114710094",appId:"1:610114710094:web:f1615c7d34901dca5f311f"});
+const auth=getAuth(app);
+onAuthStateChanged(auth,u=>{ if(u){const g=document.getElementById('fgate'); if(g)g.remove();} });
+document.getElementById('fgb').onclick=async()=>{
+  const e=document.getElementById('fge'); e.textContent='';
+  try{ await setPersistence(auth,browserLocalPersistence);
+       await signInWithEmailAndPassword(auth,document.getElementById('fgu').value,document.getElementById('fgp').value);
+  }catch(err){ e.textContent='Correo o contraseña incorrectos.'; }};
+document.getElementById('fgp').addEventListener('keydown',ev=>{if(ev.key==='Enter')document.getElementById('fgb').click();});
+</script>
+
+</body>
+</html>
